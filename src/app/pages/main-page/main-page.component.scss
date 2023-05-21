@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Ajuste a margem superior conforme necessário */
+
+    div:nth-child(1) {
+        flex-grow: 1;
+        flex-basis: auto;
+        display: inline;
+        margin-right: 400px;
+    }
+
+    div:nth-child(2) {
+        flex-grow: 1;
+        flex-basis: auto;
+        display: inline;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.nav{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 150px;
+}

@@ -1,0 +1,13 @@
+<div class="card mb-3" [ngClass]="{'selected': isSelected, 'not-selected': !isSelected}" (click)="toggleSelect()">
+  <div class="card-body">
+    <h5 class="card-header">{{ title }}</h5>
+    <div *ngIf="!isTraining">
+      <p class="card-text"><strong>Séries:</strong> {{ series }}</p>
+      <p class="card-text"><strong>Repetições:</strong> {{ repetitions }}</p>
+      <p class="card-text"><strong>Observações:</strong> {{ observations }}</p>
+    </div>
+    <div *ngIf="isTraining">
+      <p class="card-text"><strong>Quantidade de exercícios:</strong> {{ howManyExercises }}</p>
+    </div>
+  </div>
+</div>

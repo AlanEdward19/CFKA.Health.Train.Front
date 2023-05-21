@@ -1,0 +1,35 @@
+.section {
+    background-color: rgba(#000000, 0);
+    color: #FFFFFF;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .title {
+    color: #FFFFFF;
+    margin-right: 10px;
+  }
+  
+  .divider {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #148797;
+    margin-right: 10px;
+  }
+  
+  .add-button {
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: x-large;
+  }
+  
+  .section-content {
+    padding: 10px;
+  }
+  
