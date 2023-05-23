@@ -1,14 +1,15 @@
 <div>
     <div class="nav">
-        <app-nav></app-nav>
+      <app-nav></app-nav>
     </div>
     <div class="container">
-        <div>
-            <app-section title="Treinos" [isTraining]="true"></app-section>
-        </div>
-
-        <div>
-            <app-section title="Treinos" [isTraining]="false"></app-section>
-        </div>
+      <div>
+        <app-section [isTraining]="true" (cardSelected)="selectTrainingCard($event)"></app-section>
+      </div>
+  
+      <div>
+        <app-section [isTraining]="false" [selectedCard]="selectedTrainingCard"></app-section>
+      </div>
     </div>
-</div>
+  </div>
+  

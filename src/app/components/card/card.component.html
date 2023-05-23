@@ -7,7 +7,7 @@
       <p class="card-text"><strong>Observações:</strong> {{ observations }}</p>
     </div>
     <div *ngIf="isTraining">
-      <p class="card-text"><strong>Quantidade de exercícios:</strong> {{ howManyExercises }}</p>
+      <p class="card-text"><strong>Quantidade de exercícios:</strong> {{ calculateHowManyExercises() }}</p>
     </div>
   </div>
 </div>

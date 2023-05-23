@@ -1,27 +1,44 @@
 <div class="section">
+
   <div class="section-header">
     <h2 class="title">{{ getTitle() }}</h2>
     <div class="divider"></div>
-    <div class="add-button" (click)="addCard()" *ngIf="isTraining || !showForm">+</div>
+    <div *ngIf="!showForm || isTraining" class="add-button" (click)="addCard()">+</div>
   </div>
+
   <div *ngIf="showForm" class="section-form">
     <form (submit)="addCard()">
-      <!-- Adicione os campos do formulário aqui -->
+
       <ng-container *ngIf="!isTraining">
+
         <select name="exercise" [(ngModel)]="newCard.title" required>
           <option value="">Selecione um exercício</option>
-          <option *ngFor="let exercise of getExerciseOptions()" [value]="exercise">{{ exercise }}</option>
+          <option *ngFor="let exercise of returnExerciseOptions()" [value]="exercise">{{ exercise }}</option>
         </select>
+
         <input type="number" name="series" [(ngModel)]="newCard.series" placeholder="Séries">
         <input type="number" name="repetitions" [(ngModel)]="newCard.repetitions" placeholder="Repetições">
         <input type="text" name="observations" [(ngModel)]="newCard.observations" placeholder="Observações">
+
       </ng-container>
+
       <button type="submit" *ngIf="!isTraining">OK</button>
     </form>
   </div>
+
   <div class="section-content">
     <ng-container *ngFor="let card of cards; let i = index">
-      <app-card [isTraining]="isTraining" [title]="card.title" [series]="card.series" [repetitions]="card.repetitions" [observations]="card.observations"></app-card>
+
+      <app-card
+        [isTraining]="isTraining"
+        [title]="card.title"
+        [series]="card.series"
+        [repetitions]="card.repetitions"
+        [observations]="card.observations"
+        (cardSelected)="handleCardSelected($event)"
+      ></app-card>
+
     </ng-container>
   </div>
+  
 </div>
