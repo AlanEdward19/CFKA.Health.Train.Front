@@ -1,4 +1,4 @@
 export const enviroment = 
 {
-    urlApi: "",
+    urlApi: "http://localhost:5000",
 };
